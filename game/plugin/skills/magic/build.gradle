@@ -1,0 +1,11 @@
+plugin {
+    name = "magic_skill"
+    authors = [
+        "Chris Fletcher",
+        "Major"
+    ]
+
+    dependencies = [
+        "api"
+    ]
+}
