@@ -130,7 +130,7 @@ class SpellComponentsBuilder {
             amounts[LAVA_RUNE] = value
         }
 
-    companion object {
+    private companion object {
         private const val AIR_RUNE = 556
         private const val WATER_RUNE = 555
         private const val EARTH_RUNE = 557

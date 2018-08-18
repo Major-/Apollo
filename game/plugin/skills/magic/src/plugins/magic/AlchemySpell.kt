@@ -18,14 +18,28 @@ enum class AlchemySpell(
     runes: SpellComponentsBuilder.() -> Unit
 ) {
 
-    LOW(button = 1162, level = 21, animation = 712, graphic = 112, multiplier = 0.4, experience = 31, delay = 2,
+    LOW(
+        button = 1162,
+        level = 21,
+        animation = 712,
+        graphic = 112,
+        multiplier = 0.4,
+        experience = 31,
+        delay = 2,
         runes = {
             nature = 1
             fire = 3
         }
     ),
 
-    HIGH(button = 1178, level = 55, animation = 713, graphic = 113, multiplier = 0.6, experience = 65, delay = 3,
+    HIGH(
+        button = 1178,
+        level = 55,
+        animation = 713,
+        graphic = 113,
+        multiplier = 0.6,
+        experience = 65,
+        delay = 3,
         runes = {
             nature = 1
             fire = 5
@@ -37,7 +51,8 @@ enum class AlchemySpell(
     val components = runes(runes)
 
     fun alchemyValue(item: Int): Int {
-        return (Definitions.item(item)!!.value * multiplier).toInt()
+        val definition = checkNotNull(Definitions.item(item)) { "Failed to find item with id $item" }
+        return (definition.value * multiplier).toInt()
     }
 
     companion object {
